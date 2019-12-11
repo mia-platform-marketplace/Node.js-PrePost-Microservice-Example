@@ -17,9 +17,9 @@
 
 module.exports = async function sendNotification(req) {
   const { msg, who } = req.getOriginalRequestBody()
-  const notifierProxy = req.getDirectServiceProxy('api-gateway', { port: 8080 })
+  const notifierProxy = req.getDirectServiceProxy(this.config.SERVICE_NAME, { port: this.config.SERVICE_PORT })
   try {
-    const response = await notifierProxy.post('/notify-slack', { text: who.concat(' says: ', msg) })
+    const response = await notifierProxy.post('/notify-slack', { text: `${who} says: ${msg}` })
     req.log.info({ statusCode: response.statusCode }, 'Slack service response')
   } catch (error) {
     req.log.error('Error sending notification', error)

@@ -37,6 +37,8 @@ t.test('testnode', async t => {
     CLIENTTYPE_HEADER_KEY: 'clienttype',
     BACKOFFICE_HEADER_KEY: 'backoffice',
     MICROSERVICE_GATEWAY_SERVICE_NAME: 'microservice-gateway.example.org',
+    SERVICE_NAME: 'api-gateway',
+    SERVICE_PORT: 8080,
   })
 
   t.tearDown(async() => {

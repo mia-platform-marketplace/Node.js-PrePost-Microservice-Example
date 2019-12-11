@@ -21,7 +21,7 @@ module.exports = async function checkWho(req) {
   const { who } = req.getOriginalRequestBody()
   const newBody = {
     ...body,
-    who: who === undefined ? defaultWho : who,
+    who: who || req.getUserId() || defaultWho,
   }
   return req.changeOriginalRequest().setBody(newBody)
 }

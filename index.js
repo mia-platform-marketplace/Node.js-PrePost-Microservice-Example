@@ -16,9 +16,16 @@
 
 'use strict'
 
-const customService = require('@mia-platform/custom-plugin-lib')()
-const notificationsSender = require('./pre-post/notifications-sender')
-const checkWho = require('./pre-post/check-who')
+const notificationsSender = require('./post-decorator/notifications-sender')
+const checkWho = require('./pre-decorator/check-who')
+const customService = require('@mia-platform/custom-plugin-lib')({
+  type: 'object',
+  required: ['SERVICE_NAME', 'SERVICE_PORT'],
+  properties: {
+    SERVICE_NAME: { type: 'string' },
+    SERVICE_PORT: { type: 'number' },
+  },
+})
 
 module.exports = customService(async function index(service) {
   service.addPreDecorator('/checkwho', checkWho)
