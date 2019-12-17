@@ -113,6 +113,37 @@ t.test('testnode', async t => {
       t.end()
     })
 
+    t.test('Send a message to the service for sending Slack notification', async t => {
+      const scope = nock('http://api-gateway:8080').
+        post('/notify-slack', { text: `${who} says: ${msg}` })
+        .reply(404, {})
+      const response = await fastify.inject({
+        method: 'POST',
+        url: '/notify',
+        body: {
+          request: {
+            method: '',
+            path: '',
+            headers: {},
+            body: {
+              who,
+              msg,
+            },
+            query: {},
+          },
+          response: {
+            statusCode: 404,
+            headers: {},
+            body: {},
+            query: {},
+          },
+        },
+      })
+      t.equal(response.statusCode, 204)
+      scope.done()
+      t.end()
+    })
+
     t.end()
   })
 
@@ -137,6 +168,58 @@ t.test('testnode', async t => {
         body: {
           msg,
           who: defaultWho,
+        },
+      }
+      t.equal(response.statusCode, 200)
+      t.same(JSON.parse(response.body), expectedResponseBody)
+      t.end()
+    })
+
+    t.test('If "who" is undefined but user_id is set use user_id as value', async t => {
+      const response = await fastify.inject({
+        method: 'POST',
+        url: '/checkwho',
+        body: {
+          method: '',
+          path: '',
+          headers: { [fastify.config.USERID_HEADER_KEY]: 'userid' },
+          query: {},
+          body: {
+            who: undefined,
+            msg,
+          },
+        },
+      })
+      const expectedResponseBody = {
+        body: {
+          msg,
+          who: 'userid',
+        },
+      }
+      t.equal(response.statusCode, 200)
+      t.same(JSON.parse(response.body), expectedResponseBody)
+      t.end()
+    })
+
+    t.test('If "who" is defined use its value', async t => {
+      const response = await fastify.inject({
+        method: 'POST',
+        url: '/checkwho',
+        body: {
+          method: '',
+          path: '',
+          headers: {},
+          query: {},
+          body: {
+            who,
+            msg,
+          },
+        },
+      })
+      const expectedResponseBody = {
+        body: {
+          msg,
+          who,
         },
       }
       t.equal(response.statusCode, 200)
