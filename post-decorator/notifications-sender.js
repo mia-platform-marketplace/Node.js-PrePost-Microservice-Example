@@ -24,6 +24,6 @@ module.exports = async function sendNotification(req) {
   } catch (error) {
     req.log.error('Error sending notification', error)
   } finally {
-    req.leaveOriginalResponseUnmodified()
+    return req.leaveOriginalResponseUnmodified()
   }
 }
