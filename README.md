@@ -90,6 +90,14 @@ To create a proxy go to *DevOps Console -> Design -> Proxies -> Create New Proxy
 
 > Mod: you can change the name of *notify-slack* but you need to modify  *notifications-sender.js - line 22* or pass the name via environment variables.
 
+Once created add it to Endpoints. Go to *DevOps Console -> Design -> Endpoints* and Create a new Endpoint with the following values:
+
+- base path: /notify-slack
+- type: external Proxy
+- microservice: notify-slack
+
+Once created uncheck *Public* and *Only with API keys* checkboxes. Moreover set Use Group Permission to zero.
+
 ### Step 5 - CRUD Collection and Expose it
 
 The CRUD service stores all messages sent to Slack. We will add to POST the post to hook created before.
