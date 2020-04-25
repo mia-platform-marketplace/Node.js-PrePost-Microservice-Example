@@ -17,7 +17,7 @@ This example sends a message to a Slack channel each time you send a POST messag
 
 When you have created this microservice you need to setup Mia-Platform in order to use this service.
 
-The main steps are:
+This guide will help you to:
 
 - setup the Env Variables for this service
 - create an App on Slack
@@ -26,7 +26,7 @@ The main steps are:
 - create a Post Hook that points to this microservice
 - add to the CRUD Collection the Post Hook
 
-Follow the next steps to complete the setup.
+Are you ready? Follow the next steps to complete the setup and run in production your first hook!
 
 ### Step 1 - Create the Notifier Service
 
