@@ -15,8 +15,6 @@
  */
 'use strict'
 
-  // TODO: notifyslack nei paramatri, who e mymsqg nei parametri cosi possiamo personalizzare la cosa
-
 module.exports = async function sendNotification(req) {
   const { mymsg, who } = req.getOriginalRequestBody()
   const notifierProxy = req.getDirectServiceProxy(this.config.SERVICE_NAME, { port: this.config.SERVICE_PORT })
