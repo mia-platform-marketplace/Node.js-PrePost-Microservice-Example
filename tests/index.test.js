@@ -47,12 +47,12 @@ t.test('testnode', async t => {
   })
 
   const who = 'John Appleseed'
-  const msg = 'hello to everyone!'
+  const mymsg = 'hello to everyone!'
 
   t.test('POST /notify', t => {
     t.test('Send a message to the service for sending Slack notification', async t => {
       const scope = nock('http://api-gateway:8080').
-        post('/notify-slack', { text: `${who} says: ${msg}` })
+        post('/notify-slack', { text: `${who} says: ${mymsg}` })
         .reply(200, {})
       const response = await fastify.inject({
         method: 'POST',
@@ -64,7 +64,7 @@ t.test('testnode', async t => {
             headers: {},
             body: {
               who,
-              msg,
+              mymsg,
             },
             query: {},
           },
@@ -83,7 +83,7 @@ t.test('testnode', async t => {
 
     t.test('Do not block the call if the Slack service respond with error', async t => {
       const scope = nock('http://api-gateway:8080').
-        post('/notify-slack', { text: `${who} says: ${msg}` })
+        post('/notify-slack', { text: `${who} says: ${mymsg}` })
         .replyWithError('Somenthing went wrong!')
       const response = await fastify.inject({
         method: 'POST',
@@ -95,7 +95,7 @@ t.test('testnode', async t => {
             headers: {},
             body: {
               who,
-              msg,
+              mymsg,
             },
             query: {},
           },
@@ -115,7 +115,7 @@ t.test('testnode', async t => {
 
     t.test('Send a message to the service for sending Slack notification', async t => {
       const scope = nock('http://api-gateway:8080').
-        post('/notify-slack', { text: `${who} says: ${msg}` })
+        post('/notify-slack', { text: `${who} says: ${mymsg}` })
         .reply(404, {})
       const response = await fastify.inject({
         method: 'POST',
@@ -127,7 +127,7 @@ t.test('testnode', async t => {
             headers: {},
             body: {
               who,
-              msg,
+              mymsg,
             },
             query: {},
           },
@@ -160,13 +160,13 @@ t.test('testnode', async t => {
           query: {},
           body: {
             who: undefined,
-            msg,
+            mymsg,
           },
         },
       })
       const expectedResponseBody = {
         body: {
-          msg,
+          mymsg,
           who: defaultWho,
         },
       }
@@ -186,13 +186,13 @@ t.test('testnode', async t => {
           query: {},
           body: {
             who: undefined,
-            msg,
+            mymsg,
           },
         },
       })
       const expectedResponseBody = {
         body: {
-          msg,
+          mymsg,
           who: 'userid',
         },
       }
@@ -212,13 +212,13 @@ t.test('testnode', async t => {
           query: {},
           body: {
             who,
-            msg,
+            mymsg,
           },
         },
       })
       const expectedResponseBody = {
         body: {
-          msg,
+          mymsg,
           who,
         },
       }
