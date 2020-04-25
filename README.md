@@ -96,7 +96,7 @@ Once created add it to Endpoints. Go to *DevOps Console -> Design -> Endpoints* 
 - type: external Proxy
 - microservice: notify-slack
 
-Once created uncheck *Public* and *Only with API keys* checkboxes. Moreover set Use Group Permission to zero.
+> Note: this configuration is valid for test, in production you need to protect the endpoint
 
 ### Step 5 - CRUD Collection and Expose it
 
