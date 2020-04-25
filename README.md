@@ -115,7 +115,7 @@ Once created go to Routes section on the Endpoint just created and select **POST
 - Type of decorator: POST
 - Select the decorator: the name of the Hook you just created at Step 3, *notify*
 
-### Step 6 - Deploy and Test
+### Step 7 - Deploy and Test
 
 That's all! Now you can Commit and Deploy.
 
