@@ -118,7 +118,7 @@ To expose the CRUD Collection go to *DevOps Console -> Design -> Endpoints -> Cr
 - type: CRUD
 - collection: *Messages*
 
-Once created go to Routes section on the Endpoint just created and select **POST/**. Go to **Add Pre/Post Microservice** and the Hook with the following values:
+Once created set **Default State** to PUBLIC and go to **Routes** section on the Endpoint just created and select **POST/**. Go to **Add Pre/Post Microservice** and the Hook with the following values:
 
 - Type of decorator: POST
 - Select the decorator: the name of the Hook you just created at Step 3, *notify*
