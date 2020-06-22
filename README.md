@@ -1,7 +1,7 @@
 # mia_template_service_name_placeholder
 
-[![pipeline status][pipeline]][git-link]
-[![coverage report][coverage]][git-link]
+[![Build Status][github-actions-svg]][github-actions]
+[![Coverage Status][coverall-svg]][coverall-io]
 
 ## Summary
 
@@ -184,9 +184,10 @@ npm run start:local
 
 ----------------------------------
 
-[pipeline]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/badges/master/pipeline.svg
-[coverage]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/badges/master/coverage.svg
-[git-link]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/commits/master
+[github-actions]: https://github.com/mia-platform-marketplace/Node.js-PrePost-Microservice-Example/actions
+[github-actions-svg]: https://github.com/mia-platform-marketplace/Node.js-PrePost-Microservice-Example/workflows/Node.js%20CI/badge.svg
+[coverall-svg]: https://coveralls.io/repos/github/mia-platform-marketplace/Node.js-PrePost-Microservice-Example/badge.svg?branch=master
+[coverall-io]: https://coveralls.io/github/mia-platform-marketplace/Node.js-PrePost-Microservice-Example?branch=master
 
 [nvm]: https://github.com/creationix/nvm
 [merge-request]: %GITLAB_BASE_URL%/%CUSTOM_PLUGIN_PROJECT_FULL_PATH%/merge_requests
