@@ -43,7 +43,7 @@ Press *Commit & Generate* to save the configuration.
 
 ### Step 2 - Slack App
 
-You need a Slack App to send a message to a Slack Channel. In order to setup the App on Slack go to Slack API [https://api.slack.com/apps]() and press **Create New App**.
+You need a Slack App to send a message to a Slack Channel. In order to setup the App on Slack go to Slack API [https://api.slack.com/apps?new_app=1]() and press **Create New App**.
 
 Give a name to the App and select the *Slack Workspace* where you want to install
 
