@@ -17,7 +17,7 @@
     "version": "npm run update-docker-version"
   },
   "dependencies": {
-    "@mia-platform/custom-plugin-lib": "^1.2.0"
+    "@mia-platform/custom-plugin-lib": "^2.0.1"
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
