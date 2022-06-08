@@ -17,17 +17,17 @@
     "version": "npm run update-docker-version"
   },
   "dependencies": {
-    "@mia-platform/custom-plugin-lib": "^2.3.0"
+    "@mia-platform/custom-plugin-lib": "^5.0.0"
   },
   "devDependencies": {
     "@mia-platform/eslint-config-mia": "^3.0.0",
-    "eslint": "^7.32.0",
-    "nock": "^13.1.1",
+    "eslint": "^8.17.0",
+    "nock": "^13.2.6",
     "pre-commit": "^1.2.2",
-    "tap": "^14.11.0"
+    "tap": "^16.2.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=16"
   },
   "private": true,
   "eslintConfig": {
