@@ -3,6 +3,8 @@
 [![Build Status][github-actions-svg]][github-actions]
 [![Coverage Status][coverall-svg]][coverall-io]
 
+> ⚠️ Warning: This repository is no longer maintained.
+
 ## Summary
 
 %CUSTOM_PLUGIN_SERVICE_DESCRIPTION%
